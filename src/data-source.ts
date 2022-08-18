@@ -35,7 +35,7 @@ const getDataSource = (env: string, url: string): DataSource => {
         ssl: false,
         synchronize: true,
         logging: false,
-        entities: ["src/entities/*.ts"],
+        entities: ["src/models/*.ts"],
         migrations: ["src/migrations/*.ts"],
       };
       break;

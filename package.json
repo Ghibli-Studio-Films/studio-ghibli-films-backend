@@ -7,7 +7,7 @@
     "build": "tsc .",
     "start": "typeorm migration:run -d dist/src/data-source.ts && node dist/src/server.js",
     "typeorm": "typeorm-ts-node-commonjs",
-    "tsnode:dev": "ts-node-dev --transpile-only --watch --ignore-watch node_modules .",
+    "tsnode:dev": "ts-node-dev --inspect --transpile-only --watch --ignore-watch node_modules .",
     "jest:watch": "jest --watch --verbose",
     "jest:coverage": "jest --coverage --verbose",
     "migrations": "chmod +x ./src/scripts/*.sh && ./src/scripts/typeorm-migrations.sh",
