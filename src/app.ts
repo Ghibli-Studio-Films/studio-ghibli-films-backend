@@ -1,9 +1,12 @@
 import express from "express";
-import cors from "cors";
+import cors, { CorsOptions } from "cors";
+import { appRoutes } from "./routes";
 
 export const app = express();
 
-app.use(express.json());
-app.use(cors());
+const corsOptions: CorsOptions = {};
 
-app.get("/", (req, res) => res.json("Hello world!"));
+app.use(express.json());
+app.use(cors(corsOptions));
+
+appRoutes(app);

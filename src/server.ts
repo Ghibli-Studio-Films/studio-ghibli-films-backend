@@ -9,9 +9,7 @@ const bootstrap = async () => {
 
   if (NODE_ENV === "dev") {
     console.log(`\n🚀 Server: server is up on port: ${PORT}`);
-
     console.log(`\n🔗 Link: http://localhost:${PORT}/`);
-
     console.log(`\n💾 Database: connected with ${type}`);
   }
 };
