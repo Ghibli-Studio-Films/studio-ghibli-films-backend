@@ -170,3 +170,6 @@ dist
 
 # Env files
 .env
+
+# Tests coverage
+coverage

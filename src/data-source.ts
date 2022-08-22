@@ -2,7 +2,14 @@ import "reflect-metadata";
 import { DataSource, DataSourceOptions } from "typeorm";
 import { NODE_ENV, DATABASE_URL } from "./global";
 
-const getDataSource = (env: string, url: string): DataSource => {
+export const getDataSource = (
+  env: "prod" | "dev" | "test",
+  url: string
+): DataSource => {
+  if (!url) {
+    throw new TypeError("The url parameter should be defined.");
+  }
+
   let options: DataSourceOptions;
 
   switch (env) {
@@ -13,16 +20,16 @@ const getDataSource = (env: string, url: string): DataSource => {
         ssl: { rejectUnauthorized: false },
         synchronize: false,
         logging: false,
-        entities: ["dist/src/entities/*.js"],
+        entities: ["dist/src/models/*.js"],
         migrations: ["dist/src/migrations/*.js"],
       };
       break;
 
     case "test":
       options = {
-        type: "sqlite",
+        type: "better-sqlite3",
         database: ":memory:",
-        entities: ["src/entities/*.ts"],
+        entities: ["src/models/*.ts"],
         logging: false,
         synchronize: true,
       };
@@ -45,6 +52,6 @@ const getDataSource = (env: string, url: string): DataSource => {
 };
 
 export const AppDataSource = getDataSource(
-  NODE_ENV as string,
+  NODE_ENV as "prod" | "dev" | "test",
   DATABASE_URL as string
 );

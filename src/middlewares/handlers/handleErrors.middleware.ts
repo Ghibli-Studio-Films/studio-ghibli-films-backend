@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import { AppError } from "../../errors";
 import { useStatus } from "../../hooks";
 
-export const handleErrorMiddleware = (
+export const handleErrorsMiddleware = (
   error: Error,
   req: Request,
   res: Response,
@@ -19,6 +19,6 @@ export const handleErrorMiddleware = (
   return res.status(INTERNAL_SERVER_ERROR).json({
     status_code: INTERNAL_SERVER_ERROR,
     message:
-      "Internal server error. If this persists contact the dvelopment team.",
+      "Internal server error. If this persists contact the development team.",
   });
 };

@@ -1,5 +1,6 @@
 import { Request } from "express";
 import { IPaginated } from "../interfaces";
+import { useError } from "../hooks";
 
 export const pageNumberPagination = (
   req: Request,
@@ -7,6 +8,12 @@ export const pageNumberPagination = (
   page: number = 1,
   limit: number = 10
 ): IPaginated => {
+  const { PAGINATION_ERROR } = useError();
+
+  if (!Number.isInteger(page) || !Number.isInteger(limit)) {
+    throw PAGINATION_ERROR;
+  }
+
   if (page < 1) {
     page = 1;
   }
@@ -15,7 +22,7 @@ export const pageNumberPagination = (
     limit = 10;
   }
 
-  if (!dataArray) {
+  if (dataArray.length === 0) {
     return {
       data_count: 0,
       total_pages: 0,
@@ -39,7 +46,16 @@ export const pageNumberPagination = (
   };
 
   const data_count = dataArray.length;
+
+  if (data_count < limit) {
+    limit = 10;
+  }
+
   const total_pages = Math.ceil(data_count / limit);
+
+  if (total_pages < page) {
+    page = 1;
+  }
 
   const start = (page - 1) * limit;
   const end = start + limit;
