@@ -47,9 +47,8 @@ describe("Unitary Data Source on Success", () => {
 });
 
 describe("Unitary Data Source on Fail", () => {
-  it("should not be able to get data source without url", () => {
+  it("should not be able to get data source without url if NODE_ENV !== test", () => {
     try {
-      // @ts-ignore
       getDataSource("prod");
     } catch (error) {
       expect(error).toMatchObject(
