@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Light weight server for listing Studio Ghibli films.",
   "main": "src/server.ts",
+  "type": "commonjs",
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
     "start": "typeorm migration:run -d dist/data-source.js && node dist/server.js",
     "test": "NODE_ENV=test jest",
-    "typeorm": "typeorm-ts-node-commonjs",
     "tsnode:dev": "ts-node-dev --inspect --transpile-only --watch --ignore-watch node_modules .",
     "jest": "NODE_ENV=test jest",
     "jest:watch": "NODE_ENV=test jest --watch --verbose",
