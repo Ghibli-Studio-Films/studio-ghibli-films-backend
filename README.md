@@ -149,9 +149,9 @@ This topic documents the application base url, endpoints and examplify how to ma
 
 #### 4.1 Base url
 
-local: http://localhost:3000
+The base url (production) for requisitions within this application.
 
-deployed:
+deployed: `https://studio-ghibli-films-backend.herokuapp.com`
 
 #### 4.2 Requisitions
 
