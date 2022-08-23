@@ -7,7 +7,7 @@ export const getDataSource = (
   url?: string
 ): DataSource => {
   if ((env === "prod" || env === "dev") && !url) {
-    throw new TypeError("The url parameter should be defined.");
+    throw new TypeError("The url parameter should be defined for prod or dev.");
   }
 
   let options: DataSourceOptions;
@@ -20,8 +20,8 @@ export const getDataSource = (
         ssl: { rejectUnauthorized: false },
         synchronize: false,
         logging: false,
-        entities: ["dist/src/models/*.js"],
-        migrations: ["dist/src/migrations/*.js"],
+        entities: ["dist/models/*.js"],
+        migrations: ["dist/migrations/*.js"],
       };
       break;
 

@@ -52,7 +52,7 @@ describe("Unitary Data Source on Fail", () => {
       getDataSource("prod");
     } catch (error) {
       expect(error).toMatchObject(
-        new TypeError("The url parameter should be defined.")
+        new TypeError("The url parameter should be defined for prod or dev.")
       );
     }
   });
