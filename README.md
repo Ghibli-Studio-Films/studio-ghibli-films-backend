@@ -30,8 +30,6 @@
 
 ### 1. Description
 
----
-
 This project is a light weight express server made with 💕 for [Work Anywhere](https://www.waproject.com.br/) Project job appplication.
 
 The API consists in a simple express server with two endpoints. The first one is for getting films of Studio Ghibli from a thirdparty API and saving them in it's own dedicated database. The second one is for listing the films with a dynamic paginated response.
@@ -51,8 +49,6 @@ Some of the technologies used in this project where:
 [⬆️ **Go to beginning**](#index)
 
 ### 2. Get Started
-
----
 
 There are some easy, simple, yet necessary steps for setting the project ready for development/use. Follow them below to setup the enviroment and start developing/using the application.
 
@@ -131,7 +127,7 @@ With this in place it's time to start the development server.
 
 #### 2.4 Starting Development Server
 
-To start de development server just use the commands `npm run tsnode:dev` or `yarn tsnode:dev`, if the steps above where correctilly followed you should see a message similar to the one bellow:
+To start de development server just use the commands `npm run tsnode:dev` or `yarn tsnode:dev`, if the steps above where correctly followed you should see a message similar to the one bellow:
 
 <img src="./static/assets/img/dev-server.png"/>
 
@@ -141,8 +137,6 @@ To stop the development server, in most of systems, the shortcut CTRL + SHIF + C
 
 ### 3. Entity Relationship Diagram
 
----
-
 The image below represents database models and how they interact with each other in the actual development stage of the project. Bear in mind that this can and will be updated in the near future by demand.
 
 <img src="./static/assets/img/erd.png" alt="entity realationship diagram"/>
@@ -150,8 +144,6 @@ The image below represents database models and how they interact with each other
 [⬆️ **Go to beginning**](#index)
 
 ### 4. Requisitons Documentation
-
----
 
 This topic documents the application base url, endpoints and examplify how to make requisitions.
 
@@ -336,7 +328,7 @@ On fail:
 
 ### 5. Testing
 
-The application is shipped with a inital set of tests. The tests cover unitary and integration cases of controllers, services, middlewares, utils, data source and routes.
+The application is shipped with a inital set of tests. The tests cover unitary and integration test cases of controllers, services, middlewares, utils, data source and routes.
 
 Jest with ts-jest environment was the choosed test engine, he provide anything to consistently guarantee the application functionality and scalability.
 
@@ -350,13 +342,11 @@ There are some commands to run the tests suits, each one do the same but with sl
 
 extra: `npm run open:coverage` or `yarn open:coverage` - open code coverage data in a browser interface.
 
-Any new test should be put insida src/\_\_tests\_\_ directory within it's specific type (unitary or integration). Any fixture goes inside src/\_\_tests\_\_/fixtures.
+Any new test should be put inside src/\_\_tests\_\_ directory within it's specific type (unitary or integration). Any fixture goes inside src/\_\_tests\_\_/fixtures.
 
 [⬆️ **Go to beginning**](#index)
 
 ### 6. In Depth
-
----
 
 Some optional but good to know information.
 
@@ -378,11 +368,15 @@ There are two optional auxiliary shell scripts, postgres and migrations. Each on
 
 **Postgres:**
 
-Postgres script was made to help with upping and downing developer users and databases from local running postgres.
+<img src="./static/assets/img/script-postgres.png" alt="postgres script">
+
+Postgres script was made to help with upping and downing development databases from local running postgres.
 
 Just hit `npm run postgres` or `yarn postgres` and follow the isntructions.
 
 **Migration:**
+
+<img src="./static/assets/img/script-typeorm.png" alt="migrations script">
 
 Since TypeORM migration commands are too long and to complicated to remember this script will give a help with this tasks.
 
