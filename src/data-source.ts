@@ -4,9 +4,9 @@ import { NODE_ENV, DATABASE_URL } from "./global";
 
 export const getDataSource = (
   env: "prod" | "dev" | "test",
-  url: string
+  url?: string
 ): DataSource => {
-  if (!url) {
+  if ((env === "prod" || env === "dev") && !url) {
     throw new TypeError("The url parameter should be defined.");
   }
 
