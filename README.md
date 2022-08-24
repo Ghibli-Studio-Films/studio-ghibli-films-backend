@@ -145,6 +145,8 @@ The image below represents database models and how they interact with each other
 
 ### 4. Requisitons Documentation
 
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Studio%20Ghibli%20Films&uri=https%3A%2F%2Fgithub.com%2FGhibli-Studio-Films%2Fstudio-ghibli-films-backend%2Fblob%2Fdevelop%2Fstatic%2Fstudio-ghibli-films-requests.json)
+
 This topic documents the application base url, endpoints and examplify how to make requisitions.
 
 #### 4.1 Base url
